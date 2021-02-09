@@ -1,13 +1,14 @@
-import "./App.css";
-import GameScreen from "./components/GameScreen/GameScreen";
-import Paddle from "./components/Paddle/Paddle";
-import Ball from "./components/Ball/Ball";
+import './App.css';
+import GameScreen from './components/GameScreen/GameScreen';
+import Paddle from './components/Paddle/Paddle';
+import Ball from './components/Ball/Ball';
 
 function App() {
   return (
     <div className="App">
       <div className="game-container">
         <GameScreen>
+          <Ball></Ball>
           <Paddle></Paddle>
         </GameScreen>
       </div>
