@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import GameScreen from "./components/GameScreen/GameScreen";
+import Paddle from "./components/Paddle/Paddle";
+import Ball from "./components/Ball/Ball";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="game-container">
+        <GameScreen>
+          <Paddle></Paddle>
+        </GameScreen>
+      </div>
     </div>
   );
 }
