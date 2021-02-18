@@ -6,13 +6,13 @@ let ctx = canvas.getContext("2d");
 
 const { width: CANVAS_WIDTH, height: CANVAS_HEIGHT, left: CANVAS_LEFT } = canvas.getBoundingClientRect();
 let isStart = false;
-
+let animFrame = "";
 // Create player
 const player = new Paddle(10, 150, CANVAS_WIDTH, CANVAS_HEIGHT);
 player.draw(ctx);
 
 // Create ball
-const ball = new Ball(10, 3, 0, 150, 100);
+let ball = new Ball(10, 3, 90, 150, 100);
 ball.draw(ctx);
 
 const gameLoop = () => {
@@ -23,9 +23,9 @@ const gameLoop = () => {
     ball.draw(ctx);
     player.draw(ctx);
 
-    window.requestAnimationFrame(gameLoop);
+    animFrame = window.requestAnimationFrame(gameLoop);
   } else {
-    window.cancelAnimationFrame();
+    window.cancelAnimationFrame(animFrame);
   }
 };
 
@@ -54,3 +54,9 @@ canvas.addEventListener("mousemove", (e) => {
 canvas.addEventListener("mouseleave", (e) => {
   isStart = false;
 });
+
+export const endGame = () => {
+  window.cancelAnimationFrame(animFrame);
+  ball = new Ball(10, 3, 90, 150, 100);
+  ball.draw(ctx);
+};
