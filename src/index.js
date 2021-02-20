@@ -12,7 +12,7 @@ const player = new Paddle(10, 150, CANVAS_WIDTH, CANVAS_HEIGHT);
 player.draw(ctx);
 
 // Create ball
-let ball = new Ball(10, 3, 90, 150, 100);
+let ball = new Ball(10, 8, 45, 150, 100);
 ball.draw(ctx);
 
 const gameLoop = () => {
